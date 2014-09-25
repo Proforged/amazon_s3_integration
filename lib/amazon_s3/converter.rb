@@ -1,34 +1,24 @@
 class Converter
   class << self
-    def json_to_csv(json, prefix = nil)
-      return prefix unless ["Hash", "Array", "ActiveSupport::HashWithIndifferentAccess"].include? json.class.to_s
-
-      json = json.with_indifferent_access
-      keys = json.keys.map &:to_s
-
-      if prefix
-        keys = json.keys.map {|key| "#{prefix}.#{key}"}
-      end
-
-      keys.inject([]) do |final, key|
-        if json[unprefix(key)].is_a? Hash
-          final.push(*json_to_csv(json[unprefix(key)], key))
-        elsif json[unprefix(key)].is_a? Array
-          intermediate = []
-
-          json[unprefix(key)].each_with_index do |object, index|
-            intermediate.push(*json_to_csv(json[unprefix(key)][index], "#{key}.#{index}"))
-          end
-
-          final.push(*intermediate)
-        else
-          final.push(key)
-        end
+    def header(target, prefix = nil)
+      case target
+      when Hash
+        target.map do |key, value|
+          header(value, prepare_prefix(prefix, key))
+        end.flatten
+      when Array
+        target.each_with_index.map do |object, i|
+          header(object, prepare_prefix(prefix, i))
+        end.flatten
+      else
+        prefix.to_s
       end
     end
 
-    def unprefix(key)
-      key.split(".").last
+    def prepare_prefix(a , b)
+      return b unless a
+
+      "#{a}.#{b}"
     end
   end
 end

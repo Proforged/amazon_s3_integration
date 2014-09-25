@@ -27,18 +27,14 @@ describe Converter do
           status: "ready"
         }],
         array: ["red", "green", "refactor"],
-        array_with_hash: [10, { a: 1, b: 2 }]
-        # array_with_nested_array: ["yes", ["no", "nope"], [[["maybe"]]]],
+        array_with_hash: [10, { a: 1, b: 2 }],
+        array_with_nested_array: ["yes", ["no", "nope"], [[["maybe"]]]]
       }
     end
 
     it 'works' do
-      expect(subject.json_to_csv(json)).to eq([
-        "id",
-        "string",
-        "hash_nested.adjustment", "hash_nested.tax", "hash_nested.shipping.airplane", "hash_nested.shipping.land.north", "hash_nested.shipping.land.south",
-        "array_of_hashes.0.id", "array_of_hashes.0.status", "array_of_hashes.1.id", "array_of_hashes.1.status",
-        "array.0", "array.1", "array.2", "array_with_hash.0", "array_with_hash.1.a", "array_with_hash.1.b"
+      expect(subject.header(json)).to eq([
+        "id", "string", "hash_nested.adjustment", "hash_nested.tax", "hash_nested.shipping.airplane", "hash_nested.shipping.land.north", "hash_nested.shipping.land.south", "array_of_hashes.0.id", "array_of_hashes.0.status", "array_of_hashes.1.id", "array_of_hashes.1.status", "array.0", "array.1", "array.2", "array_with_hash.0", "array_with_hash.1.a", "array_with_hash.1.b", "array_with_nested_array.0", "array_with_nested_array.1.0", "array_with_nested_array.1.1", "array_with_nested_array.2.0.0.0"
       ])
     end
   end
