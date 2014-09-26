@@ -27,14 +27,40 @@ class Converter
       end
     end
 
-    def generate_csv(worst_case_json)
-      header = csv_header(worst_case_json)
+    def generate_csv(hash)
+      header = csv_header(hash)
 
       output = header.inject([]) do |buff, column|
-        buff.push json_path(worst_case_json, column)
+        buff.push json_path(hash, column)
       end
 
       [header.join(","), output.join(",")].join("\n")
+    end
+
+    def csv_to_json(csv)
+      header, values = csv.split("\n")
+
+      header = header.split(",")
+      values = values.split(",")
+
+      header.each_with_index.inject({}) do |buff, (path, index)|
+        json_path_set(buff, path, values[index])
+      end
+    end
+
+    def json_path_set(json, path, value)
+      return value if path == ""
+
+      current = leftmost_path(path)
+
+      case json[current]
+      when Hash
+        json[current].deep_merge! json_path_set({}, rest_of_path(path), value)
+      when nil
+        json[current] = json_path_set({}, rest_of_path(path), value)
+      end
+
+      json
     end
 
     private
