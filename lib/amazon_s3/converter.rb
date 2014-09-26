@@ -53,11 +53,23 @@ class Converter
 
       current = leftmost_path(path)
 
-      case json[current]
-      when Hash
-        json[current].deep_merge! json_path_set({}, rest_of_path(path), value)
-      when nil
-        json[current] = json_path_set({}, rest_of_path(path), value)
+      if current.to_i.to_s == current #number?
+        json = [] unless json.is_a? Array
+        case json[current.to_i]
+        when nil
+          json[current.to_i] = json_path_set({}, rest_of_path(path), value)
+        else
+          json[current.to_i] = json_path_set(json[current.to_i], rest_of_path(path), value)
+        end
+      else
+        case json[current]
+        when Array
+          json[current] = json_path_set(json[current], rest_of_path(path), value)
+        when Hash
+          json[current].deep_merge! json_path_set({}, rest_of_path(path), value)
+        when nil
+          json[current] = json_path_set({}, rest_of_path(path), value)
+        end
       end
 
       json
