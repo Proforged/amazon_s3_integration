@@ -1,5 +1,33 @@
 require_relative 'converter'
 
 class AmazonS3
+  def initialize(s3_client:, bucket_name:)
+    @s3_client = s3_client
+    @bucket_name = bucket_name
+  end
 
+  def export(file_name:, folder_name:, object:)
+    begin
+      unless bucket.exists?
+        return false, "Bucket '#{@bucket_name}' was not found."
+      end
+
+      aws_file_path = "#{folder_name}/#{file_name}.csv" # make it safe with regards to // and .csv.csv and check existence
+      s3_object = bucket.objects[aws_file_path]
+      s3_object.write(csv(object))
+
+      [true, "File #{aws_file_path} was saved to s3"]
+    rescue => e
+      [false, e.message]
+    end
+  end
+
+  private
+  def csv(object)
+    Converter.generate_csv(object)
+  end
+
+  def bucket
+    @s3_client.buckets[@bucket_name]
+  end
 end

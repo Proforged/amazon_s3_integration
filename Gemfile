@@ -6,9 +6,8 @@ gem 'tilt-jbuilder', require: 'sinatra/jbuilder'
 gem 'endpoint_base', github: 'spree/endpoint_base'
 gem 'foreman'
 gem 'unicorn'
-gem 'nokogiri'
-gem 'httparty'
-gem 'simplecov'
+
+gem 'aws-sdk'
 
 group :development do
   gem 'pry'
@@ -20,9 +19,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov'
   gem 'rspec'
   gem 'rack-test'
-  gem 'vcr'
-  gem 'webmock'
 end
 
