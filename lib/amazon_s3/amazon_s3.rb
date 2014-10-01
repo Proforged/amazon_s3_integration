@@ -19,7 +19,7 @@ class AmazonS3
     verify_bucket!
 
     s3_object = bucket.objects[file_name]
-    objects = Converter.csv_to_json(s3_object.read)
+    objects = Converter.csv_to_hash(s3_object.read)
     object_count = objects.count
 
     summary = ""

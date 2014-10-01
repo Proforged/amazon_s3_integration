@@ -97,9 +97,9 @@ describe Converter do
     end
   end
 
-  describe '.csv_to_json' do
+  describe '.csv_to_hash' do
     it 'returns the object' do
-      expect(subject.csv_to_json(csv_fixture)[0].with_indifferent_access).to eq worst_case_json.with_indifferent_access
+      expect(subject.csv_to_hash(csv_fixture)[0].with_indifferent_access).to eq worst_case_json.with_indifferent_access
     end
 
     context 'when csv has multiple lines' do
@@ -108,11 +108,11 @@ describe Converter do
       end
 
       it 'returns an array of objects' do
-        expect(subject.csv_to_json(csv_fixture)[0]["id"]).to eq "R154085346541340"
-        expect(subject.csv_to_json(csv_fixture)[1]["id"]).to eq "R123"
+        expect(subject.csv_to_hash(csv_fixture)[0]["id"]).to eq "R154085346541340"
+        expect(subject.csv_to_hash(csv_fixture)[1]["id"]).to eq "R123"
 
-        expect(subject.csv_to_json(csv_fixture)[0]["array"]).to eq ["red", "green", "refactor"]
-        expect(subject.csv_to_json(csv_fixture)[1]["array"]).to eq ["red", "red", "omg"]
+        expect(subject.csv_to_hash(csv_fixture)[0]["array"]).to eq ["red", "green", "refactor"]
+        expect(subject.csv_to_hash(csv_fixture)[1]["array"]).to eq ["red", "red", "omg"]
       end
     end
 
@@ -122,7 +122,7 @@ describe Converter do
       end
 
       it 'returns an empty array' do
-        expect(subject.csv_to_json(csv_fixture)).to eq []
+        expect(subject.csv_to_hash(csv_fixture)).to eq []
       end
     end
 
@@ -130,7 +130,7 @@ describe Converter do
       let(:csv_fixture) { "" }
 
       it 'returns an empty array' do
-        expect(subject.csv_to_json(csv_fixture)).to eq []
+        expect(subject.csv_to_hash(csv_fixture)).to eq []
       end
     end
   end

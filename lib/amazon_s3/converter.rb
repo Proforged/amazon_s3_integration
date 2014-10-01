@@ -37,7 +37,7 @@ class Converter
       [header.join(","), output.join(",")].join("\n")
     end
 
-    def csv_to_json(csv)
+    def csv_to_hash(csv)
       header, *lines = csv.split("\n")
 
       header = header.to_s.split(",")
