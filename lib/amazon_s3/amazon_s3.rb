@@ -14,9 +14,25 @@ class AmazonS3
 
       aws_file_path = "#{folder_name}/#{file_name}.csv" # make it safe with regards to // and .csv.csv and check existence
       s3_object = bucket.objects[aws_file_path]
-      s3_object.write(csv(object))
+      s3_object.write(csv(object)) # do not overwrite, save as (1)
 
       [true, "File #{aws_file_path} was saved to s3"]
+    rescue => e
+      [false, e.message]
+    end
+  end
+
+  def import(file_name:, folder_name:, object_type:)
+    begin
+      unless bucket.exists?
+        return false, "Bucket '#{@bucket_name}' was not found."
+      end
+
+      aws_file_path = "#{folder_name}/#{file_name}.csv" # make it safe with regards to // and .csv.csv and check existence
+      s3_object = bucket.objects[aws_file_path]
+      object = Converter.csv_to_json(s3_object.read) # currently just 1
+
+      [true, "File #{aws_file_path} was read from S3 with 1 object.", { object_type => object }]
     rescue => e
       [false, e.message]
     end

@@ -16,6 +16,21 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
     result success_to_code(success), summary
   end
 
+  post '/import_file' do
+    success, summary, object = AmazonS3.new(
+      s3_client:    s3_client,
+      bucket_name:  @config[:bucket_name],
+    ).import(
+      file_name:    @config[:file_name],
+      folder_name:  @config[:folder_name],
+      object_type:  @config[:object_type]
+    )
+
+    add_object object.keys[0], object.values[0] # check if object, iterate if > 1
+
+    result success_to_code(success), summary
+  end
+
   def s3_client
     AWS::S3.new(
       access_key_id: @config[:access_key_id],
