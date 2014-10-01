@@ -18,8 +18,7 @@ class AmazonS3
   def import(file_name:)
     verify_bucket!
 
-    s3_object = bucket.objects[file_name]
-    objects = Converter.csv_to_hash(s3_object.read)
+    objects = Converter.csv_to_hash(read_file!(file_name))
     object_count = objects.count
 
     summary = ""
@@ -29,6 +28,16 @@ class AmazonS3
   end
 
   private
+  def read_file!(file_name)
+    s3_object = bucket.objects[file_name]
+
+    if s3_object.exists?
+      s3_object.read
+    else
+      raise "File #{file_name} was not found on S3."
+    end
+  end
+
   def verify_bucket!
     raise "Bucket '#{@bucket_name}' was not found." unless bucket.exists?
   end

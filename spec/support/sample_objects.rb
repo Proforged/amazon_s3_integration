@@ -1,6 +1,6 @@
-def aws_testing_credentials
-  # Add your testing credentials to aws_testing_credentials.yml
-  YAML.load_file("aws_testing_credentials.yml").with_indifferent_access
+def aws_testing
+  # Add your testing credentials to aws_testing.yml
+  YAML.load_file("aws_testing.yml").with_indifferent_access
 end
 
 def sample_shipment(number = "R#{rand(999999)}")
