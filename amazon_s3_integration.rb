@@ -10,8 +10,12 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       bucket_name:  @config[:bucket_name],
     ).export(
       file_name:    @config[:file_name],
-      objects:      objects(@payload)
+      objects:      objects
     )
+
+    if batch?
+      add_value "success", { summary => objects.collect {|o| o["id"]} }
+    end
 
     result 200, summary
   end
@@ -39,7 +43,11 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
     )
   end
 
-  def objects(payload)
-    Array.wrap(payload.except(:parameters, :request_id).values.first)
+  def objects
+    Array.wrap(@payload.except(:parameters, :request_id).values.first)
+  end
+
+  def batch?
+    objects.size > 1
   end
 end
