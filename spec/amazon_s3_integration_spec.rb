@@ -14,8 +14,7 @@ describe AmazonS3Integration do
           access_key_id: aws_testing_credentials[:access_key_id],
           secret_access_key: aws_testing_credentials[:secret_access_key],
           bucket_name: 'bruno-s3-testing',
-          file_name: 'shipment',
-          folder_name: 'files'
+          file_name: 'files/shipment.csv'
         },
         shipment: sample_shipment("R9")
       }
@@ -46,8 +45,7 @@ describe AmazonS3Integration do
           access_key_id: aws_testing_credentials[:access_key_id],
           secret_access_key: aws_testing_credentials[:secret_access_key],
           bucket_name: 'bruno-s3-testing',
-          file_name: 'shipment',
-          folder_name: 'files',
+          file_name: 'files/shipment.csv',
           object_type: 'shipment'
         }
       }

@@ -10,7 +10,6 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       bucket_name:  @config[:bucket_name],
     ).export(
       file_name:    @config[:file_name],
-      folder_name:  @config[:folder_name],
       object:       @payload[:shipment]
     )
 
@@ -22,8 +21,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       s3_client:    s3_client,
       bucket_name:  @config[:bucket_name],
     ).import(
-      file_name:    @config[:file_name],
-      folder_name:  @config[:folder_name]
+      file_name:    @config[:file_name]
     )
 
     objects.each do |object|
