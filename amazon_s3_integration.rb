@@ -10,7 +10,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       bucket_name:  @config[:bucket_name],
     ).export(
       file_name:    @config[:file_name],
-      object:       @payload[:shipment]
+      objects:      objects(@payload)
     )
 
     result 200, summary
@@ -37,5 +37,9 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       secret_access_key: @config[:secret_access_key],
       region: 'us-east-1' #validate this or else getaddrinfo: nodename nor servname provided, or not known
     )
+  end
+
+  def objects(payload)
+    Array.wrap(payload.except(:parameters, :request_id).values.first)
   end
 end

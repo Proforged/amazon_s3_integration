@@ -1,14 +1,27 @@
 require 'spec_helper'
 
 describe AmazonS3 do
-  describe "#import" do
-    subject { described_class.new(s3_client: s3_client, bucket_name: aws_testing[:bucket_name]) }
+  subject { described_class.new(s3_client: s3_client, bucket_name: aws_testing[:bucket_name]) }
 
+  describe '#export' do
+    context 'when batch' do
+      it 'saves the csv with all objects' do
+        expect(
+          subject.export(
+            file_name: 'batch/shipments.csv',
+            objects: [sample_shipment, sample_shipment]
+          )
+        ).to eq "File batch/shipments.csv was saved to S3"
+      end
+    end
+  end
+
+  describe '#import' do
     context 'file is not found' do
       it 'raises an exception' do
         expect {
           subject.import(file_name: 'not/to/be-found.csv')
-        }.to raise_error "File not/to/be-found.csv was not found on S3."
+        }.to raise_error 'File not/to/be-found.csv was not found on S3.'
       end
     end
   end

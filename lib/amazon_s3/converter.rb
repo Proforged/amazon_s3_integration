@@ -27,14 +27,28 @@ class Converter
       end
     end
 
-    def hash_to_csv(hash)
-      header = csv_header(hash)
+    def array_of_hashes_to_csv(array)
+      header = csv_header(array[0]) # uses 1st element as header prototype
 
+      body = array.inject([]) do |buff, hash|
+        buff.push hash_to_csv(hash, header: header, skip_header: true)
+      end
+
+      body = body.join("\n")
+
+      [header.join(","), body].join("\n")
+    end
+
+    def hash_to_csv(hash, header: csv_header(hash), skip_header: false)
       output = header.inject([]) do |buff, column|
         buff.push json_path(hash, column)
       end
 
-      [header.join(","), output.join(",")].join("\n")
+      if skip_header
+        output.join(",")
+      else
+        [header.join(","), output.join(",")].join("\n")
+      end
     end
 
     def csv_to_hash(csv)
