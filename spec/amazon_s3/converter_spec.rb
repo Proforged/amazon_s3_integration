@@ -98,8 +98,40 @@ describe Converter do
   end
 
   describe '.csv_to_json' do
-    it 'works' do
-      expect(subject.csv_to_json(csv_fixture).with_indifferent_access).to eq worst_case_json.with_indifferent_access
+    it 'returns the object' do
+      expect(subject.csv_to_json(csv_fixture)[0].with_indifferent_access).to eq worst_case_json.with_indifferent_access
+    end
+
+    context 'when csv has multiple lines' do
+      let(:csv_fixture) do
+        "id,string,hash_nested.adjustment,hash_nested.tax,hash_nested.shipping.airplane,hash_nested.shipping.land.north,hash_nested.shipping.land.south,array_of_hashes.0.id,array_of_hashes.0.status,array_of_hashes.1.id,array_of_hashes.1.status,array.0,array.1,array.2,array_with_hash.0,array_with_hash.1.a,array_with_hash.1.b,array_with_nested_array.0,array_with_nested_array.1.0,array_with_nested_array.1.1,array_with_nested_array.2.0.0.0\nR154085346541340,USD,20,10,5,1,2,1,shipped,2,ready,red,green,refactor,10,1,2,yes,no,nope,maybe\nR123,BRL,20,10,5,1,2,1,shipped,2,ready,red,red,omg,10,1,2,yes,no,nope,maybe"
+      end
+
+      it 'returns an array of objects' do
+        expect(subject.csv_to_json(csv_fixture)[0]["id"]).to eq "R154085346541340"
+        expect(subject.csv_to_json(csv_fixture)[1]["id"]).to eq "R123"
+
+        expect(subject.csv_to_json(csv_fixture)[0]["array"]).to eq ["red", "green", "refactor"]
+        expect(subject.csv_to_json(csv_fixture)[1]["array"]).to eq ["red", "red", "omg"]
+      end
+    end
+
+    context 'when csv contains header only' do
+      let(:csv_fixture) do
+        "id,string,hash_nested.adjustment,hash_nested.tax,hash_nested.shipping.airplane,hash_nested.shipping.land.north,hash_nested.shipping.land.south,array_of_hashes.0.id,array_of_hashes.0.status,array_of_hashes.1.id,array_of_hashes.1.status,array.0,array.1,array.2,array_with_hash.0,array_with_hash.1.a,array_with_hash.1.b,array_with_nested_array.0,array_with_nested_array.1.0,array_with_nested_array.1.1,array_with_nested_array.2.0.0.0"
+      end
+
+      it 'returns an empty array' do
+        expect(subject.csv_to_json(csv_fixture)).to eq []
+      end
+    end
+
+    context 'when csv is empty' do
+      let(:csv_fixture) { "" }
+
+      it 'returns an empty array' do
+        expect(subject.csv_to_json(csv_fixture)).to eq []
+      end
     end
   end
 end

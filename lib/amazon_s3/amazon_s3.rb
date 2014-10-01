@@ -22,7 +22,7 @@ class AmazonS3
     end
   end
 
-  def import(file_name:, folder_name:, object_type:)
+  def import(file_name:, folder_name:)
     begin
       unless bucket.exists?
         return false, "Bucket '#{@bucket_name}' was not found."
@@ -30,9 +30,13 @@ class AmazonS3
 
       aws_file_path = "#{folder_name}/#{file_name}.csv" # make it safe with regards to // and .csv.csv and check existence
       s3_object = bucket.objects[aws_file_path]
-      object = Converter.csv_to_json(s3_object.read) # currently just 1
+      objects = Converter.csv_to_json(s3_object.read)
+      object_count = objects.count
 
-      [true, "File #{aws_file_path} was read from S3 with 1 object.", { object_type => object }]
+      summary = ""
+      summary = "File #{aws_file_path} was read from S3 with #{object_count} object(s)." if object_count > 0
+
+      [true, summary, objects]
     rescue => e
       [false, e.message]
     end

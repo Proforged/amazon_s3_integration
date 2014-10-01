@@ -1,5 +1,6 @@
 require_relative 'lib/amazon_s3/amazon_s3'
 
+require 'active_support/inflector'
 class AmazonS3Integration < EndpointBase::Sinatra::Base
   set :logging, true
 
@@ -17,16 +18,17 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
   end
 
   post '/import_file' do
-    success, summary, object = AmazonS3.new(
+    success, summary, objects = AmazonS3.new(
       s3_client:    s3_client,
       bucket_name:  @config[:bucket_name],
     ).import(
       file_name:    @config[:file_name],
-      folder_name:  @config[:folder_name],
-      object_type:  @config[:object_type]
+      folder_name:  @config[:folder_name]
     )
 
-    add_object object.keys[0], object.values[0] # check if object, iterate if > 1
+    objects.each do |object|
+      add_object @config[:object_type], object
+    end if objects
 
     result success_to_code(success), summary
   end

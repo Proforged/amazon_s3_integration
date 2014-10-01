@@ -56,7 +56,7 @@ describe AmazonS3Integration do
     it 'reads from S3 and returns object and summary (200)' do
       post '/import_file', request.to_json, {}
 
-      expect(json_response["summary"]).to eq "File files/shipment.csv was read from S3 with 1 object."
+      expect(json_response["summary"]).to eq "File files/shipment.csv was read from S3 with 1 object(s)."
       expect(json_response["shipments"][0]["id"]).to eq "R9"
 
       expect(last_response.status).to eq 200

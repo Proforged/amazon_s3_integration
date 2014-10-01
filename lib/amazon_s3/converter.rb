@@ -38,13 +38,16 @@ class Converter
     end
 
     def csv_to_json(csv)
-      header, values = csv.split("\n")
+      header, *lines = csv.split("\n")
 
-      header = header.split(",")
-      values = values.split(",")
+      header = header.to_s.split(",")
 
-      header.each_with_index.inject({}) do |buff, (path, index)|
-        json_path_set(buff, path, values[index])
+      lines.inject([]) do |objects, current_line|
+        values = current_line.split(",")
+
+        objects << header.each_with_index.inject({}) do |buff, (path, index)|
+          json_path_set(buff, path, values[index])
+        end
       end
     end
 
