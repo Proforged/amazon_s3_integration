@@ -5,7 +5,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
   set :logging, true
 
   post '/export_file' do
-    success, summary = AmazonS3.new(
+    summary = AmazonS3.new(
       s3_client:    s3_client,
       bucket_name:  @config[:bucket_name],
     ).export(
@@ -13,11 +13,11 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       object:       @payload[:shipment]
     )
 
-    result success_to_code(success), summary
+    result 200, summary
   end
 
   post '/import_file' do
-    success, summary, objects = AmazonS3.new(
+    summary, objects = AmazonS3.new(
       s3_client:    s3_client,
       bucket_name:  @config[:bucket_name],
     ).import(
@@ -28,7 +28,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       add_object @config[:object_type], object
     end if objects
 
-    result success_to_code(success), summary
+    result 200, summary
   end
 
   def s3_client
@@ -37,9 +37,5 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       secret_access_key: @config[:secret_access_key],
       region: 'us-east-1' #validate this or else getaddrinfo: nodename nor servname provided, or not known
     )
-  end
-
-  def success_to_code(bool)
-    bool ? 200 : 500
   end
 end

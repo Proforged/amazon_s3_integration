@@ -7,40 +7,32 @@ class AmazonS3
   end
 
   def export(file_name:, object:)
-    begin
-      unless bucket.exists?
-        return false, "Bucket '#{@bucket_name}' was not found."
-      end
+    verify_bucket!
 
-      s3_object = bucket.objects[file_name] # make it safe with regards to // and .csv.csv and check existence
-      s3_object.write(csv(object)) # do not overwrite, save as (1)
+    s3_object = bucket.objects[file_name] # make it safe with regards to // and .csv.csv and check existence
+    s3_object.write(csv(object)) # do not overwrite, save as (1)
 
-      [true, "File #{file_name} was saved to s3"]
-    rescue => e
-      [false, e.message]
-    end
+    "File #{file_name} was saved to s3"
   end
 
   def import(file_name:)
-    begin
-      unless bucket.exists?
-        return false, "Bucket '#{@bucket_name}' was not found."
-      end
+    verify_bucket!
 
-      s3_object = bucket.objects[file_name]
-      objects = Converter.csv_to_json(s3_object.read)
-      object_count = objects.count
+    s3_object = bucket.objects[file_name]
+    objects = Converter.csv_to_json(s3_object.read)
+    object_count = objects.count
 
-      summary = ""
-      summary = "File #{file_name} was read from S3 with #{object_count} object(s)." if object_count > 0
+    summary = ""
+    summary = "File #{file_name} was read from S3 with #{object_count} object(s)." if object_count > 0
 
-      [true, summary, objects]
-    rescue => e
-      [false, e.message]
-    end
+    [summary, objects]
   end
 
   private
+  def verify_bucket!
+    raise "Bucket '#{@bucket_name}' was not found." unless bucket.exists?
+  end
+
   def csv(hash)
     Converter.hash_to_csv(hash)
   end
