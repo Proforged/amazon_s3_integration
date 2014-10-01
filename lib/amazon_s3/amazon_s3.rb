@@ -39,8 +39,8 @@ class AmazonS3
   end
 
   private
-  def csv(object)
-    Converter.generate_csv(object)
+  def csv(hash)
+    Converter.hash_to_csv(hash)
   end
 
   def bucket

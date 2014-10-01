@@ -27,7 +27,7 @@ class Converter
       end
     end
 
-    def generate_csv(hash)
+    def hash_to_csv(hash)
       header = csv_header(hash)
 
       output = header.inject([]) do |buff, column|
