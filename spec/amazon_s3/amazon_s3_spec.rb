@@ -4,6 +4,22 @@ describe AmazonS3 do
   subject { described_class.new(s3_client: s3_client, bucket_name: aws_testing[:bucket_name]) }
 
   describe '#export' do
+    context 'when file already exists' do
+      it 'saves the csv as original_file_name(nth).csv' do
+        subject.export(
+          file_name: 'already_exists/shipments.csv',
+          objects: [sample_shipment, sample_shipment]
+        )
+
+        expect(
+          subject.export(
+            file_name: 'already_exists/shipments.csv',
+            objects: [sample_shipment, sample_shipment]
+          )
+        ).to eq "File already_exists/shipments(1).csv was saved to S3"
+      end
+    end
+
     context 'when batch' do
       it 'saves the csv with all objects' do
         expect(

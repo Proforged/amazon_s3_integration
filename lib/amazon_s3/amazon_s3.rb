@@ -9,10 +9,10 @@ class AmazonS3
   def export(file_name:, objects:)
     verify_bucket!
 
-    s3_object = bucket.objects[file_name] # make it safe with regards to // and .csv.csv and check existence
-    s3_object.write(csv(objects)) # do not overwrite, save as (1)
+    s3_object = find_next_s3_object(file_name)
+    s3_object.write(csv(objects))
 
-    "File #{file_name} was saved to S3"
+    "File #{s3_object.key} was saved to S3"
   end
 
   def import(file_name:)
@@ -28,6 +28,27 @@ class AmazonS3
   end
 
   private
+  def find_next_s3_object(file_name)
+    s3_object = bucket.objects[file_name]
+
+    # file.csv exists?
+    # save it to file(1).csv or file(next_id).csv
+    if s3_object.exists?
+      prefix = file_name.gsub(".csv", "(")
+      copies = bucket.objects.with_prefix(prefix).map do |s3_object|
+        # extracts the id: already_exists/shipments(2).csv -> 2
+        s3_object.key.match(/\A.*\((\d+)\)\.csv\z/)[1].to_i
+      end
+
+      next_id = copies.max.to_i + 1
+
+      file_name = file_name.gsub(".csv", "(#{next_id}).csv")
+      bucket.objects[file_name]
+    else
+      s3_object
+    end
+  end
+
   def read_file!(file_name)
     s3_object = bucket.objects[file_name]
 
