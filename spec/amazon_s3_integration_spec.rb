@@ -74,7 +74,8 @@ describe AmazonS3Integration do
           secret_access_key: aws_testing[:secret_access_key],
           bucket_name: 'bruno-s3-testing',
           file_name: 'files/shipment_batch.csv',
-          object_type: 'shipment'
+          object_type: 'shipment',
+          region: 'us-east-1'
         }
       }
     end
@@ -88,6 +89,17 @@ describe AmazonS3Integration do
       expect(json_response["shipments"][0]["id"]).to eq "R9"
 
       expect(last_response.status).to eq 200
+    end
+
+    context 'wrong aws region' do
+      it 'warns the user in the summary' do
+        VCR.use_cassette("integration_import_wrong_region") do
+          post '/import_file', request.deep_merge(parameters: { region: 'cucamonga-1' }).to_json, {}
+        end
+
+        expect(json_response["summary"]).to eq "Unable to reach Amazon S3. Please make sure 'cucamonga-1' is a valid region"
+        expect(last_response.status).to eq 500
+      end
     end
   end
 end

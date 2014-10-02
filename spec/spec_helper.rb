@@ -18,6 +18,7 @@ Sinatra::Base.environment = 'test'
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
+  c.allow_http_connections_when_no_cassette = true
   c.filter_sensitive_data('SECRET_SAUCE') {|_| aws_testing['secret_access_key'] }
   c.filter_sensitive_data('SHHHHHHHHHHH') {|_| aws_testing['access_key_id'] }
 end

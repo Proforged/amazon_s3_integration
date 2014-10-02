@@ -4,6 +4,10 @@ require 'active_support/inflector'
 class AmazonS3Integration < EndpointBase::Sinatra::Base
   set :logging, true
 
+  error SocketError do
+    result 500, "Unable to reach Amazon S3. Please make sure '#{@config[:region]}' is a valid region"
+  end
+
   post '/export_file' do
     summary = AmazonS3.new(
       s3_client:    s3_client,
@@ -39,7 +43,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
     AWS::S3.new(
       access_key_id: @config[:access_key_id],
       secret_access_key: @config[:secret_access_key],
-      region: 'us-east-1' #validate this or else getaddrinfo: nodename nor servname provided, or not known
+      region: @config[:region]
     )
   end
 
