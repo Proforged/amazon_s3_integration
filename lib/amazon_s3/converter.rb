@@ -28,7 +28,7 @@ class Converter
     end
 
     def array_of_hashes_to_csv(array)
-      header = csv_header(array[0]) # uses 1st element as header prototype
+      header = generate_master_header(array)
 
       body = array.inject([]) do |buff, hash|
         buff.push hash_to_csv(hash, header: header, skip_header: true)
@@ -93,6 +93,14 @@ class Converter
     end
 
     private
+    def generate_master_header(array)
+      master_header = array.inject([]) do |total, current_hash|
+        total.push(csv_header(current_hash))
+      end
+
+      master_header.flatten.uniq
+    end
+
     def rest_of_path(path)
       path.split(".")[1..-1].join(".")
     end

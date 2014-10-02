@@ -91,6 +91,14 @@ describe Converter do
     it 'transforms multiple hashes into csv' do
       expect(subject.array_of_hashes_to_csv([worst_case_json, worst_case_json])).to eq "id,string,hash_nested.adjustment,hash_nested.tax,hash_nested.shipping.airplane,hash_nested.shipping.land.north,hash_nested.shipping.land.south,array_of_hashes.0.id,array_of_hashes.0.status,array_of_hashes.1.id,array_of_hashes.1.status,array.0,array.1,array.2,array_with_hash.0,array_with_hash.1.a,array_with_hash.1.b,array_with_nested_array.0,array_with_nested_array.1.0,array_with_nested_array.1.1,array_with_nested_array.2.0.0.0\nR154085346541340,USD,20,10,5,1,2,1,shipped,2,ready,red,green,refactor,10,1,2,yes,no,nope,maybe\nR154085346541340,USD,20,10,5,1,2,1,shipped,2,ready,red,green,refactor,10,1,2,yes,no,nope,maybe"
     end
+
+    context 'hashes with different schemas' do
+      it 'generates a csv with all the columns' do
+        expect(
+          subject.array_of_hashes_to_csv([ { a: 1, b: 1 }, { b: 2, c: 2 } ])
+        ).to eq "a,b,c\n1,1,\n,2,2"
+      end
+    end
   end
 
   describe '.hash_to_csv' do
