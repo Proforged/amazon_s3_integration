@@ -13,6 +13,7 @@ describe AmazonS3Integration do
         parameters: {
           access_key_id: aws_testing[:access_key_id],
           secret_access_key: aws_testing[:secret_access_key],
+          region: 'us-east-1',
           bucket_name: aws_testing[:bucket_name],
           file_name: 'files/shipment.csv'
         },
@@ -43,6 +44,7 @@ describe AmazonS3Integration do
           parameters: {
             access_key_id: aws_testing[:access_key_id],
             secret_access_key: aws_testing[:secret_access_key],
+            region: 'us-east-1',
             bucket_name: aws_testing[:bucket_name],
             file_name: 'files/shipment_batch.csv'
           },
@@ -66,10 +68,10 @@ describe AmazonS3Integration do
         parameters: {
           access_key_id: aws_testing[:access_key_id],
           secret_access_key: aws_testing[:secret_access_key],
+          region: 'us-east-1',
           bucket_name: 'bruno-s3-testing',
           file_name: 'files/shipment_batch.csv',
-          object_type: 'shipment',
-          region: 'us-east-1'
+          object_type: 'shipment'
         }
       }
     end

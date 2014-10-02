@@ -43,7 +43,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
     AWS::S3.new(
       access_key_id: @config[:access_key_id],
       secret_access_key: @config[:secret_access_key],
-      region: @config[:region]
+      region: @config[:region].to_s.downcase
     )
   end
 

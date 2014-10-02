@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 20:24:23 GMT
+      - Thu, 02 Oct 2014 21:35:34 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:Adddd4lNe2D7BK3Foj7+N14l8Ag=
+      - AWS SHHHHHHHHHHH:9eHwaGPo3ACcv19q4sBLV4r9nFk=
       Accept:
       - "*/*"
   response:
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - xyEA/bMhterQp7V/cJ2ZbTBB/H8X+93clXRlM2w68JF62SIso5wpDYJmeJI9YGfsHxIjIEqz0OE=
+      - JTfzyBLuaGkaP+wzOftrBG7/8fJ3+8cxNygz7+MEUqQLv/y2PCUVsgf8PBM0l140
       X-Amz-Request-Id:
-      - 499188A6B492F211
+      - AA873E128DE696A5
       Date:
-      - Thu, 02 Oct 2014 20:24:21 GMT
+      - Thu, 02 Oct 2014 21:35:32 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -40,7 +40,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 20:24:24 GMT
+  recorded_at: Thu, 02 Oct 2014 21:35:35 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/files/shipment_batch.csv
@@ -55,9 +55,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 20:24:24 GMT
+      - Thu, 02 Oct 2014 21:35:35 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:zv25MReq8BM+B+gs6iGnvtLDpN4=
+      - AWS SHHHHHHHHHHH:Yl65TkGYpzbV+jwznFNQGCWvVfo=
       Accept:
       - "*/*"
   response:
@@ -66,22 +66,22 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - E9775CF14522441B
+      - 84DA619C652F43FE
       X-Amz-Id-2:
-      - q0x2k+NAucbRTJLaGhlScRrIllLvz2Pxf35TFFllmQg+GWxuaGFEjosTvwzcaTMeB66wGwd4COM=
+      - "+RL7ZCQgAzqLnMUb0KAi3g0pUA5tmUwNDnzIHk0NAD0+Bfga/39J628dmPOPNhJX"
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 20:24:20 GMT
+      - Thu, 02 Oct 2014 21:35:31 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 20:24:25 GMT
+  recorded_at: Thu, 02 Oct 2014 21:35:36 GMT
 - request:
     method: put
     uri: https://bruno-s3-testing.s3.amazonaws.com/files/shipment_batch.csv
@@ -101,9 +101,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 20:24:25 GMT
+      - Thu, 02 Oct 2014 21:35:36 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:WH8UubQeyWJSAQKFhOkK++SdzzM=
+      - AWS SHHHHHHHHHHH:ecMzgWGnWuR20+vY5nFv3I0zKaY=
       Accept:
       - "*/*"
   response:
@@ -112,11 +112,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - tVbLO0PqzukpD/qtLLBVFoLOykQCO+MQWSNpn11nvRZa9NlIz6UWN3wiMm05Ls0WIDR+jXCMFIk=
+      - D2CeEFkoSeVvycsIOPnW7N6Y/1nkh6Og63+U7xRlbhe3fhQcYOI4yA5sV7JD2+Q3
       X-Amz-Request-Id:
-      - 8E7DCEFF9BDB7F98
+      - B4283A2F235853A7
       Date:
-      - Thu, 02 Oct 2014 20:24:23 GMT
+      - Thu, 02 Oct 2014 21:35:34 GMT
       Etag:
       - '"b048c232e47fd357bcfe01bb6d6d3806"'
       Content-Length:
@@ -127,5 +127,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 20:24:25 GMT
+  recorded_at: Thu, 02 Oct 2014 21:35:37 GMT
 recorded_with: VCR 2.9.2
