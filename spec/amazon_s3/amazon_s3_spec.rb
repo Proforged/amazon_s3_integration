@@ -33,7 +33,24 @@ describe AmazonS3 do
   end
 
   describe '#import' do
-    context 'file is not found' do
+    context 'when file is present' do
+      it 'reads the contents of csv as hash' do
+        summary, objects = subject.import(file_name: 'batch/shipments.csv')
+
+        expect(summary).to eq "File batch/shipments.csv was read from S3 with 2 object(s)."
+        expect(objects[0]["id"]).to eq "R946846"
+      end
+
+      it 'removes the file after reading' do
+        subject.export(file_name: 'deleteme.csv', objects: [{ id: 1 }])
+        subject.import(file_name: 'deleteme.csv')
+        expect {
+          subject.import(file_name: 'deleteme.csv')
+        }.to raise_error 'File deleteme.csv was not found on S3.'
+      end
+    end
+
+    context 'when file is not found' do
       it 'raises an exception' do
         expect {
           subject.import(file_name: 'not/to/be-found.csv')

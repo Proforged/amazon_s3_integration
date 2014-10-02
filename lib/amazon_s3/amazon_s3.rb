@@ -53,7 +53,9 @@ class AmazonS3
     s3_object = bucket.objects[file_name]
 
     if s3_object.exists?
-      s3_object.read
+      contents = s3_object.read
+      s3_object.delete
+      contents
     else
       raise "File #{file_name} was not found on S3."
     end
