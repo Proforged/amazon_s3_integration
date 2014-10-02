@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:23 GMT
+      - Thu, 02 Oct 2014 20:34:59 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:dtXetB+2nBKcYySm8+v8WGzWbzk=
+      - AWS SHHHHHHHHHHH:YBMyQSZwqMOFEV8l7NJkqiXyIhc=
       Accept:
       - "*/*"
   response:
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - Wh4Cc3UkBDkNbC7+W6z4X0MisFfwGQe9tPSv3VzThDv5j1psXXYAt5ndk1q/zYNB
+      - Kmhj2nxYCZ2lQGPDfbRGXKAhQP2PtQ+lpPaFElYobJT8b+yk/piGm2KauswI77fD
       X-Amz-Request-Id:
-      - 1C26A3B3CFB88DC5
+      - 2A4AE0054CA971F4
       Date:
-      - Thu, 02 Oct 2014 15:39:23 GMT
+      - Thu, 02 Oct 2014 20:34:57 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -40,7 +40,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:23 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:00 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/import.csv
@@ -55,9 +55,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:23 GMT
+      - Thu, 02 Oct 2014 20:35:00 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:8WIBAmNuyal2SzODZs+Jcj7wAc8=
+      - AWS SHHHHHHHHHHH:Vl2bJq+59B5KKVlPuwxaoEgSHPQ=
       Accept:
       - "*/*"
   response:
@@ -66,22 +66,22 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - 3AF4F80FEE5C5EBA
+      - A6DEC3A61C8AE854
       X-Amz-Id-2:
-      - M2PRQbQgv3iufCd4abr/ZMW+LF8SSyV1WZhlzeP5ViZj92GIFDYUYZ52fooK1NGj
+      - u7nI9aBjWX5IsOxeH9kJf6VGcptXJKMeHlTiACPyRSpHDj4XhSq7sql5oqv8r8iB
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 15:39:22 GMT
+      - Thu, 02 Oct 2014 20:34:56 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:24 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:00 GMT
 - request:
     method: put
     uri: https://bruno-s3-testing.s3.amazonaws.com/import.csv
@@ -101,9 +101,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:24 GMT
+      - Thu, 02 Oct 2014 20:35:00 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:1efOVYeCn9YWoPSqnPFei20gkxw=
+      - AWS SHHHHHHHHHHH:bvbD11KsfslrwC3MahzW4pFyiZs=
       Accept:
       - "*/*"
   response:
@@ -112,11 +112,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - T9TWE+F+bm23hOTT3BiDu33MDITCGVY3DzNB1uhSAsAWzdEdzFu8XvwKzRJYzZF8
+      - tWFmv0Nfp6VsP8Q2DtNd4XHhyLuu0Z/R+/OX5Au+n0l0OQFWbtvt7t1rCT15Ohyb
       X-Amz-Request-Id:
-      - 596949993A086D07
+      - DA706E2D325D6D7C
       Date:
-      - Thu, 02 Oct 2014 15:39:24 GMT
+      - Thu, 02 Oct 2014 20:34:58 GMT
       Etag:
       - '"873c865ab08317797fda4bce11e2e50e"'
       Content-Length:
@@ -127,7 +127,7 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:25 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:01 GMT
 - request:
     method: get
     uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
@@ -142,9 +142,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:25 GMT
+      - Thu, 02 Oct 2014 20:35:01 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:mcMV4mbc6jaDd5qglEQKySPemCY=
+      - AWS SHHHHHHHHHHH:v6w3tjKnb42CQeCGjdMwMs/YcBo=
       Accept:
       - "*/*"
   response:
@@ -153,11 +153,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - l6B7eHtd7y+m3enSvhqX13xMQSEOoEmTLcCtodnWJR1D/DAuzIpfePEH+IBUPd4+
+      - T1CGmRNG4NTLbY9qQjdURN5BsfX/W3spxEvhK//qeNURlXQBe54ZCP4bAM4kuFZ+
       X-Amz-Request-Id:
-      - DE9BAFE57460B247
+      - A6DE6EB966A265B7
       Date:
-      - Thu, 02 Oct 2014 15:39:25 GMT
+      - Thu, 02 Oct 2014 20:34:59 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -168,7 +168,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:25 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:02 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/import.csv
@@ -183,9 +183,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:25 GMT
+      - Thu, 02 Oct 2014 20:35:02 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:BKQGxjgvdTkGLEUGLeQfva1y+Dk=
+      - AWS SHHHHHHHHHHH:aIKGsSCCFkq+PchDLRDZ0UA1cUc=
       Accept:
       - "*/*"
   response:
@@ -194,13 +194,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - UOXJKMbYiH1P/cIRMvM9lX0sdXKT1PGAr24Vzpbr96ZXb2G58DI/7+ONVsdG4nzH
+      - elVJannzh1IvGQLuzhVUFN9pT9o1ssk1Eht4LXCVTWKrbxUO8Rm74OAqJt6f34N3
       X-Amz-Request-Id:
-      - 38FC786D3FB3830F
+      - 58E151EAC22DE995
       Date:
-      - Thu, 02 Oct 2014 15:39:26 GMT
+      - Thu, 02 Oct 2014 20:35:00 GMT
       Last-Modified:
-      - Thu, 02 Oct 2014 15:39:24 GMT
+      - Thu, 02 Oct 2014 20:34:58 GMT
       Etag:
       - '"873c865ab08317797fda4bce11e2e50e"'
       Accept-Ranges:
@@ -215,7 +215,7 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:27 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:03 GMT
 - request:
     method: get
     uri: https://bruno-s3-testing.s3.amazonaws.com/import.csv
@@ -230,9 +230,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:27 GMT
+      - Thu, 02 Oct 2014 20:35:03 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:DYxZK3Ht+K5ytugsg2WZX7ZYEg8=
+      - AWS SHHHHHHHHHHH:V1jE13HFIR4L2QlU0ytpiOT2UDg=
       Accept:
       - "*/*"
   response:
@@ -241,13 +241,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - 15Hir7VkxUzoMQlm9C0WWQYS4CLUAs4l4E1zVN4Q7YBC6zLDoluouCS0OoNjbehA
+      - arYrxTLnYS9MhhRvmtimb0LJ3KEKZRk0KjivEwH2lJtZ+ZFJkza0RN5wa04nJMbw
       X-Amz-Request-Id:
-      - 0D0EBE665FAD8F94
+      - A53DCE72616FE53A
       Date:
-      - Thu, 02 Oct 2014 15:39:27 GMT
+      - Thu, 02 Oct 2014 20:35:00 GMT
       Last-Modified:
-      - Thu, 02 Oct 2014 15:39:24 GMT
+      - Thu, 02 Oct 2014 20:34:58 GMT
       Etag:
       - '"873c865ab08317797fda4bce11e2e50e"'
       Accept-Ranges:
@@ -265,7 +265,7 @@ http_interactions:
         R1,shipped
         R2,ready
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:28 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:03 GMT
 - request:
     method: delete
     uri: https://bruno-s3-testing.s3.amazonaws.com/import.csv
@@ -280,9 +280,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:28 GMT
+      - Thu, 02 Oct 2014 20:35:03 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:XHwZt2kPJ2pl63AxWJDjoQ20/uE=
+      - AWS SHHHHHHHHHHH:oyFw0Et9UeBKQ8GNyvU04+OXT1M=
       Accept:
       - "*/*"
   response:
@@ -291,16 +291,16 @@ http_interactions:
       message: No Content
     headers:
       X-Amz-Id-2:
-      - ojOUAgH1i9C6SFQOhwPHJp/zAIlWHlZC6EMR9IZowiX7bwtlNuyI6ERXrrQ+esY5
+      - ZaQj8kbltM67M4Jn2l6xagrQ+bBbj28DjqbAOG9+5JLK8IJYDQaXL295YV0xSyNV
       X-Amz-Request-Id:
-      - 6916BC35C818C5C6
+      - DE7A0D9901F0DDC2
       Date:
-      - Thu, 02 Oct 2014 15:39:28 GMT
+      - Thu, 02 Oct 2014 20:35:01 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:28 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:04 GMT
 recorded_with: VCR 2.9.2

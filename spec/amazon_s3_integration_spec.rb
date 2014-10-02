@@ -20,20 +20,16 @@ describe AmazonS3Integration do
       }
     end
 
-    it 'saves to S3 and returns a summary (200)' do
-      VCR.use_cassette("integration_export") do
-        post '/export_file', request.to_json, {}
-      end
+    it 'saves to S3 and returns a summary (200)', :vcr do
+      post '/export_file', request.to_json, {}
 
       expect(json_response["summary"]).to eq "File files/shipment.csv was saved to S3"
       expect(last_response.status).to eq 200
     end
 
     context 'bucket does not exist' do
-      it 'returns a message (500)' do
-        VCR.use_cassette("integration_export_bucket_not_found") do
-          post '/export_file', request.deep_merge(parameters: { bucket_name: 'not-to-be-found' }).to_json, {}
-        end
+      it 'returns a message (500)', :vcr do
+        post '/export_file', request.deep_merge(parameters: { bucket_name: 'not-to-be-found' }).to_json, {}
 
         expect(json_response["summary"]).to eq "Bucket 'not-to-be-found' was not found."
         expect(last_response.status).to eq 500
@@ -54,10 +50,8 @@ describe AmazonS3Integration do
         }
       end
 
-      it 'saves to S3 and returns a summary (200)' do
-        VCR.use_cassette("integration_export_batch") do
-          post '/export_file', request.to_json, {}
-        end
+      it 'saves to S3 and returns a summary (200)', :vcr do
+        post '/export_file', request.to_json, {}
 
         expect(json_response["summary"]).to eq "File files/shipment_batch.csv was saved to S3"
         expect(last_response.status).to eq 200
@@ -80,10 +74,8 @@ describe AmazonS3Integration do
       }
     end
 
-    it 'reads from S3 and returns object and summary (200)' do
-      VCR.use_cassette("integration_import") do
-        post '/import_file', request.to_json, {}
-      end
+    it 'reads from S3 and returns object and summary (200)', :vcr do
+      post '/import_file', request.to_json, {}
 
       expect(json_response["summary"]).to eq "File files/shipment_batch.csv was read from S3 with 2 object(s)."
       expect(json_response["shipments"][0]["id"]).to eq "R9"
@@ -93,9 +85,9 @@ describe AmazonS3Integration do
 
     context 'wrong aws region' do
       it 'warns the user in the summary' do
-        VCR.use_cassette("integration_import_wrong_region") do
-          post '/import_file', request.deep_merge(parameters: { region: 'cucamonga-1' }).to_json, {}
-        end
+        expect(AmazonS3).to receive(:new).and_raise SocketError
+
+        post '/import_file', request.deep_merge(parameters: { region: 'cucamonga-1' }).to_json, {}
 
         expect(json_response["summary"]).to eq "Unable to reach Amazon S3. Please make sure 'cucamonga-1' is a valid region"
         expect(last_response.status).to eq 500

@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:34 GMT
+      - Thu, 02 Oct 2014 20:35:12 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:hONzIgj/sCdzQzDZZgBOnc38oks=
+      - AWS SHHHHHHHHHHH:B/E8iHc9reJWvIsDOx2Mn9CFhSI=
       Accept:
       - "*/*"
   response:
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - 78KaKlVMeNxhInsCgckNIo39KMezHLDrqgD9yImTsVPKl2zIaiTSKCf6orulqJPz
+      - 7BPRvW73/vCPUI0jBLMGFCmC3obn6TEjVnWN4qqWSFcDqF1oQ7nJ/rPas1mw4eHO
       X-Amz-Request-Id:
-      - 1D918D6966BF95F1
+      - 76E615F5A247AD73
       Date:
-      - Thu, 02 Oct 2014 15:39:35 GMT
+      - Thu, 02 Oct 2014 20:35:09 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -40,7 +40,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:35 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:12 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/not/to/be-found.csv
@@ -55,9 +55,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:35 GMT
+      - Thu, 02 Oct 2014 20:35:12 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:mqBWclryr3k2CVQuJ4XQ7rv3t6A=
+      - AWS SHHHHHHHHHHH:2N+qcE7vtOIq/x7WQ6HpfVsGjOY=
       Accept:
       - "*/*"
   response:
@@ -66,20 +66,20 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - C6F16940B9C35818
+      - C7A2BD379F567D25
       X-Amz-Id-2:
-      - rC5uUDnAzDyUEBEpFAIlvB8dF6inhLYpTc8gYJ4JoNIcyhIvBAggPOItGkr4jzGz
+      - vlU8YstvRa3PEPxc4kZqBrVeE1jQLJwvSG7kGSiw3OhXInEe0L1V9ss+RPZ6es3Y
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 15:39:34 GMT
+      - Thu, 02 Oct 2014 20:35:08 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:36 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:13 GMT
 recorded_with: VCR 2.9.2

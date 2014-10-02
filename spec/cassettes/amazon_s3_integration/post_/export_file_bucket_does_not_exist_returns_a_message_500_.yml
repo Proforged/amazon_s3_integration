@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:44:46 GMT
+      - Thu, 02 Oct 2014 20:24:21 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:i4ykXd7bSvVD0TJI0UHLIIxChLg=
+      - AWS SHHHHHHHHHHH:86+zu0Y8eWA1RR26J7uNB8vw06c=
       Accept:
       - "*/*"
   response:
@@ -25,22 +25,22 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - 53B323BA79ABB334
+      - 6DC1B7DE24788C84
       X-Amz-Id-2:
-      - gCujtRdp5ZeZocAbxpoIIuSzZQHRXrIWJI1jQsO890edzgdb00I2fFSp75Va9LUI
+      - 2KAISciVstCk6ZxjT7b61BvBAseb8Cy7nYH0jME60ce2WUHBsIzshVnE7LwEnHqa
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 15:44:46 GMT
+      - Thu, 02 Oct 2014 20:24:19 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: |-
         <?xml version="1.0" encoding="UTF-8"?>
-        <Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>not-to-be-found</BucketName><RequestId>53B323BA79ABB334</RequestId><HostId>gCujtRdp5ZeZocAbxpoIIuSzZQHRXrIWJI1jQsO890edzgdb00I2fFSp75Va9LUI</HostId></Error>
+        <Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>not-to-be-found</BucketName><RequestId>6DC1B7DE24788C84</RequestId><HostId>2KAISciVstCk6ZxjT7b61BvBAseb8Cy7nYH0jME60ce2WUHBsIzshVnE7LwEnHqa</HostId></Error>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:44:48 GMT
+  recorded_at: Thu, 02 Oct 2014 20:24:23 GMT
 recorded_with: VCR 2.9.2

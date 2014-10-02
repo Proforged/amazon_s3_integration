@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:28 GMT
+      - Thu, 02 Oct 2014 20:35:04 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:Ju7wqDLvflQUsWcyHTSPcV+B9sk=
+      - AWS SHHHHHHHHHHH:Vm6CgRakB9CLurRYhDGfUSrQFJA=
       Accept:
       - "*/*"
   response:
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - bAg7iwksDmzdnOgU0gYFSAi/ZJAumCra1DXsovSh9gggs04gWdua+4NSF+CA59DZ
+      - vaKSKOCZPLSZhYRrE4Vjus65rGPBpeVWeAiLRCT8BpGfhDnzrQjU1bAGIITbdZhk
       X-Amz-Request-Id:
-      - EEE95C02E133F510
+      - 5DDC401550F38986
       Date:
-      - Thu, 02 Oct 2014 15:39:28 GMT
+      - Thu, 02 Oct 2014 20:35:02 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -40,7 +40,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:29 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:05 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
@@ -55,9 +55,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:29 GMT
+      - Thu, 02 Oct 2014 20:35:05 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:aH9TwV/+QUyLfKtCdynSywV3jko=
+      - AWS SHHHHHHHHHHH:w/bvFi++XT0aWnNXmiyyeiRDBAs=
       Accept:
       - "*/*"
   response:
@@ -66,22 +66,22 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - F059C19915624244
+      - 6C6912CEA1B4460D
       X-Amz-Id-2:
-      - 2Wjcdjnn9s7/7WA3sDFutix6d5a5hhT4va5nHMGxLkqrfaidMT/DI4EVE4SxMUTE
+      - 8yGw54cgYopzFACUZSLkygTprf2s0jku9sOp5/BEG2rYv9EDO/yYw31zH+qmWhUT
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 15:39:28 GMT
+      - Thu, 02 Oct 2014 20:35:01 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:29 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:06 GMT
 - request:
     method: put
     uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
@@ -100,9 +100,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:29 GMT
+      - Thu, 02 Oct 2014 20:35:06 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:DUZyJVxGVhV+849SB7NIT/4iabY=
+      - AWS SHHHHHHHHHHH:+HSASA5vNOgulBWCkwLEnZbsgJw=
       Accept:
       - "*/*"
   response:
@@ -111,11 +111,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - AYXairm1fd88a6YEBSFnuAGfMiDpBr/dp9Rasuyf+oSGCxqsrxgSPgfl9kvi+aam
+      - P2p2QnnMQ9xCvhhHLgftBWjRbTTqSHWXnl34P7A22vfU+lDpZT6xuMFXP7CU0ga/
       X-Amz-Request-Id:
-      - 337689940DE88EBD
+      - 84CB6C1902792D00
       Date:
-      - Thu, 02 Oct 2014 15:39:30 GMT
+      - Thu, 02 Oct 2014 20:35:04 GMT
       Etag:
       - '"ce4a729ab53c3ad106c15183e665ad83"'
       Content-Length:
@@ -126,7 +126,7 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:30 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:07 GMT
 - request:
     method: get
     uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
@@ -141,9 +141,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:30 GMT
+      - Thu, 02 Oct 2014 20:35:07 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:WRii3a+fv88WmUVoluzhycia1uc=
+      - AWS SHHHHHHHHHHH:711W/siai6TNXD7L/QKwPvbW8yo=
       Accept:
       - "*/*"
   response:
@@ -152,11 +152,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - pRvncdXYAmKu6D0GFdREM6cesiTesxoh2ncCnFblj5SUxXVbe8BVEKy4mwAnOhCW
+      - kwEM9omt6CyB95ieaw2GCPK27FhWDTy0kumxR0SvZrNe6uPOOef/yIYThkjUGwFM
       X-Amz-Request-Id:
-      - 3DF5F67A7E58DD18
+      - F8D97AFAD774A9FD
       Date:
-      - Thu, 02 Oct 2014 15:39:30 GMT
+      - Thu, 02 Oct 2014 20:35:05 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -167,7 +167,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:31 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:07 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
@@ -182,9 +182,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:31 GMT
+      - Thu, 02 Oct 2014 20:35:07 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:0/ui3bHKw6YMwjqZfKXx8YyrIX0=
+      - AWS SHHHHHHHHHHH:vOkY7H6XCr7Yuj89T1MzaAYrWE0=
       Accept:
       - "*/*"
   response:
@@ -193,13 +193,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - Eqj0GDOHpoQ0YKG9qo/2c736D348LOAwF2eGwwhGEpGkSm9xof4t1UCcvS0g5CMU
+      - Wr/GA5MYxjnRNsEderuE09fYxjMZgPGvRhIGdWBJgCe9L+GoSBQb7NwkDtP3BMb8
       X-Amz-Request-Id:
-      - E8696891F032FF8D
+      - 9346ACDC440EE71C
       Date:
-      - Thu, 02 Oct 2014 15:39:31 GMT
+      - Thu, 02 Oct 2014 20:35:05 GMT
       Last-Modified:
-      - Thu, 02 Oct 2014 15:39:30 GMT
+      - Thu, 02 Oct 2014 20:35:04 GMT
       Etag:
       - '"ce4a729ab53c3ad106c15183e665ad83"'
       Accept-Ranges:
@@ -214,7 +214,7 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:31 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:08 GMT
 - request:
     method: get
     uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
@@ -229,9 +229,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:31 GMT
+      - Thu, 02 Oct 2014 20:35:08 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:NgpMUUt29bh21gLKoura3sASrf4=
+      - AWS SHHHHHHHHHHH:jTz9qrGYXTxYkGXwreVBFPBQFx4=
       Accept:
       - "*/*"
   response:
@@ -240,13 +240,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - TEOcyJN98+RfuPs9j+3hNCWUBtIAOW9EK+VGwt6+TH0QfUwoMSNDZnEO9z9n6CoL
+      - Jzky3MJHDDRaGTTw9O/fM610qQud6UNY1hWBJIfTvolrx7KbLfP5xlkAF2lKsM1n
       X-Amz-Request-Id:
-      - B7490BD0F1BD06BB
+      - 8179A8778DDA2061
       Date:
-      - Thu, 02 Oct 2014 15:39:32 GMT
+      - Thu, 02 Oct 2014 20:35:06 GMT
       Last-Modified:
-      - Thu, 02 Oct 2014 15:39:30 GMT
+      - Thu, 02 Oct 2014 20:35:04 GMT
       Etag:
       - '"ce4a729ab53c3ad106c15183e665ad83"'
       Accept-Ranges:
@@ -263,7 +263,7 @@ http_interactions:
         id
         1
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:32 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:09 GMT
 - request:
     method: delete
     uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
@@ -278,9 +278,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:32 GMT
+      - Thu, 02 Oct 2014 20:35:09 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:17bhRPE+8eYvWx+iOfG6PXmxYuA=
+      - AWS SHHHHHHHHHHH:JoNFExBwxfUIc+ft9U60bdKqAlo=
       Accept:
       - "*/*"
   response:
@@ -289,18 +289,18 @@ http_interactions:
       message: No Content
     headers:
       X-Amz-Id-2:
-      - TRyQVFXtGhfMPNuzGK0SKeKAJGWg16J7ozyfs7DJkIO3DYFldoq06Cvl9MTmyz0Z
+      - Wwye0BYSzMqY9pGM2de7OlXqc8HJ0C5tMbXJ/x1JG0j/hfmcMEPEIAQhSMNHusT7
       X-Amz-Request-Id:
-      - 79ADE5FCDBD529A5
+      - 0AD65E4E90099FFD
       Date:
-      - Thu, 02 Oct 2014 15:39:32 GMT
+      - Thu, 02 Oct 2014 20:35:07 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:33 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:10 GMT
 - request:
     method: get
     uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
@@ -315,9 +315,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:33 GMT
+      - Thu, 02 Oct 2014 20:35:10 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:OxWGP6bbWaH6c0MIQfPLHZfkGzQ=
+      - AWS SHHHHHHHHHHH:UiCUT+EtupDDXKn0kli2oezWnq0=
       Accept:
       - "*/*"
   response:
@@ -326,11 +326,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - 4O471tDNSGRnGh+vEDN+A/SkMxxEeNugGczSaY6E9Jf+Iyu9YMWiOIemcau7OWBt
+      - g4vxgogX7yiU9gPPJmkrVkDnhVsF1wBUfiY0lAnjil8pPL61bFKvYjQt2dw/sbG7
       X-Amz-Request-Id:
-      - 3543C16F5D44FB52
+      - 2EB50AEF0258E296
       Date:
-      - Thu, 02 Oct 2014 15:39:33 GMT
+      - Thu, 02 Oct 2014 20:35:08 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -341,7 +341,7 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:33 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:11 GMT
 - request:
     method: head
     uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
@@ -356,9 +356,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:39:33 GMT
+      - Thu, 02 Oct 2014 20:35:11 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:VjCKtdj+eoWyxStZ5frlHkC8oyQ=
+      - AWS SHHHHHHHHHHH:ilAtKhcvtFCsAQEIA9h6vBmhQHQ=
       Accept:
       - "*/*"
   response:
@@ -367,20 +367,20 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - 9966C3BC094E2942
+      - AADC8E5327BDEA1F
       X-Amz-Id-2:
-      - p4xac/2faJMSW3iesUPAUJ+o3s96NCDd3R1ZPxsdhZBfAT77PNMejt2zAg1Mbwnl
+      - VwlDnIVObWPChWBfXufXy5cIN7cFV4RLMAfiP303q6V5jAQWgKJyBdQz40zZJHRs
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 15:39:32 GMT
+      - Thu, 02 Oct 2014 20:35:07 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:39:34 GMT
+  recorded_at: Thu, 02 Oct 2014 20:35:12 GMT
 recorded_with: VCR 2.9.2

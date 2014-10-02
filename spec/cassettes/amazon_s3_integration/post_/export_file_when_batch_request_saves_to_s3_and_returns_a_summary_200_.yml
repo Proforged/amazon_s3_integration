@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:44:34 GMT
+      - Thu, 02 Oct 2014 20:24:23 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:RHfl6NdrlUjE/YSxOvqOWVwaPDQ=
+      - AWS SHHHHHHHHHHH:Adddd4lNe2D7BK3Foj7+N14l8Ag=
       Accept:
       - "*/*"
   response:
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - Z+FBNqXfDKGKMYvIjUboaDhTFTm36XkY37FvSZlPrygrajjV70JN5K4ebnFEGwFO
+      - xyEA/bMhterQp7V/cJ2ZbTBB/H8X+93clXRlM2w68JF62SIso5wpDYJmeJI9YGfsHxIjIEqz0OE=
       X-Amz-Request-Id:
-      - BEB6D3725FF9EA17
+      - 499188A6B492F211
       Date:
-      - Thu, 02 Oct 2014 15:44:34 GMT
+      - Thu, 02 Oct 2014 20:24:21 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -40,10 +40,10 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:44:35 GMT
+  recorded_at: Thu, 02 Oct 2014 20:24:24 GMT
 - request:
     method: head
-    uri: https://bruno-s3-testing.s3.amazonaws.com/files/shipment.csv
+    uri: https://bruno-s3-testing.s3.amazonaws.com/files/shipment_batch.csv
     body:
       encoding: US-ASCII
       string: ''
@@ -55,9 +55,9 @@ http_interactions:
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:44:35 GMT
+      - Thu, 02 Oct 2014 20:24:24 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:bp8nuLqBOj8OVmaIhkx4rxQUsaY=
+      - AWS SHHHHHHHHHHH:zv25MReq8BM+B+gs6iGnvtLDpN4=
       Accept:
       - "*/*"
   response:
@@ -66,43 +66,44 @@ http_interactions:
       message: Not Found
     headers:
       X-Amz-Request-Id:
-      - B18FCBD493E38F7C
+      - E9775CF14522441B
       X-Amz-Id-2:
-      - 77QtJtdZUIYzJcFL4N9OK8BzeBPi68Ml8oUmWgkmhBAygYX6Fgy0dN2PvVaEQnab
+      - q0x2k+NAucbRTJLaGhlScRrIllLvz2Pxf35TFFllmQg+GWxuaGFEjosTvwzcaTMeB66wGwd4COM=
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 02 Oct 2014 15:44:33 GMT
+      - Thu, 02 Oct 2014 20:24:20 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:44:36 GMT
+  recorded_at: Thu, 02 Oct 2014 20:24:25 GMT
 - request:
     method: put
-    uri: https://bruno-s3-testing.s3.amazonaws.com/files/shipment.csv
+    uri: https://bruno-s3-testing.s3.amazonaws.com/files/shipment_batch.csv
     body:
       encoding: ASCII-8BIT
       string: |-
         id,status,channel,email,currency,placed_on,totals.item,totals.adjustment,totals.tax,totals.shipping,totals.payment,totals.order,items.0.product_id,items.0.name,items.0.quantity,items.0.price,adjustments.0.name,adjustments.0.value,adjustments.1.name,adjustments.1.value,adjustments.2.name,adjustments.2.value,shipping_address.firstname,shipping_address.lastname,shipping_address.address1,shipping_address.address2,shipping_address.zipcode,shipping_address.city,shipping_address.state,shipping_address.country,shipping_address.phone,billing_address.firstname,billing_address.lastname,billing_address.address1,billing_address.address2,billing_address.zipcode,billing_address.state,billing_address.country,billing_address.phone
         R9,complete,spree,spree@example.com,USD,2014-02-03T17:29:15.219Z,200,20,10,10,220,220,QTRZIM03,QTRZIM03,2,100,Tax,10,Shipping,5,Shipping,5,Joe,Smith,1234 Awesome Street,,90210,Hollywood,California,US,0000000000,Joe,Smith,1234 Awesome Street,,90210,California,US,0000000000
+        R1,complete,spree,spree@example.com,USD,2014-02-03T17:29:15.219Z,200,20,10,10,220,220,QTRZIM03,QTRZIM03,2,100,Tax,10,Shipping,5,Shipping,5,Joe,Smith,1234 Awesome Street,,90210,Hollywood,California,US,0000000000,Joe,Smith,1234 Awesome Street,,90210,California,US,0000000000
     headers:
       Content-Type:
       - ''
       Accept-Encoding:
       - ''
       Content-Length:
-      - '996'
+      - '1269'
       User-Agent:
       - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
       Date:
-      - Thu, 02 Oct 2014 15:44:36 GMT
+      - Thu, 02 Oct 2014 20:24:25 GMT
       Authorization:
-      - AWS SHHHHHHHHHHH:pJeYP25HorZpWB5FjncZcLoPeqs=
+      - AWS SHHHHHHHHHHH:WH8UubQeyWJSAQKFhOkK++SdzzM=
       Accept:
       - "*/*"
   response:
@@ -111,13 +112,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - z62RZsEsQg45s0pxNJtHUvUMCz+A5h3dDfYd8vTRTHSB3Nbsr9KftF8t8BEBOxUg
+      - tVbLO0PqzukpD/qtLLBVFoLOykQCO+MQWSNpn11nvRZa9NlIz6UWN3wiMm05Ls0WIDR+jXCMFIk=
       X-Amz-Request-Id:
-      - ED3F3ED5BD474FAA
+      - 8E7DCEFF9BDB7F98
       Date:
-      - Thu, 02 Oct 2014 15:44:36 GMT
+      - Thu, 02 Oct 2014 20:24:23 GMT
       Etag:
-      - '"f04fc03dd5816e44f031c59e3b2296bf"'
+      - '"b048c232e47fd357bcfe01bb6d6d3806"'
       Content-Length:
       - '0'
       Server:
@@ -126,5 +127,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Oct 2014 15:44:37 GMT
+  recorded_at: Thu, 02 Oct 2014 20:24:25 GMT
 recorded_with: VCR 2.9.2
