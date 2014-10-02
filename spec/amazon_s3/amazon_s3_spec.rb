@@ -57,17 +57,18 @@ describe AmazonS3 do
       it 'removes the file after reading', :vcr do
         subject.export(file_name: 'deleteme.csv', objects: [{ id: 1 }])
         subject.import(file_name: 'deleteme.csv')
-        expect {
-          subject.import(file_name: 'deleteme.csv')
-        }.to raise_error 'File deleteme.csv was not found on S3.'
+
+        summary, objects = subject.import(file_name: 'deleteme.csv')
+        expect(summary).to be_nil
+        expect(objects).to eq []
       end
     end
 
     context 'when file is not found' do
-      it 'raises an exception', :vcr do
-        expect {
-          subject.import(file_name: 'not/to/be-found.csv')
-        }.to raise_error 'File not/to/be-found.csv was not found on S3.'
+      it 'return nil summary, no objects', :vcr do
+        summary, objects = subject.import(file_name: 'not/to/be-found.csv')
+        expect(summary).to be_nil
+        expect(objects).to eq []
       end
     end
   end

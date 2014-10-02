@@ -57,7 +57,7 @@ class AmazonS3
       s3_object.delete
       contents
     else
-      raise "File #{file_name} was not found on S3."
+      ""
     end
   end
 
