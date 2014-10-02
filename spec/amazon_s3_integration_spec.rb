@@ -21,7 +21,9 @@ describe AmazonS3Integration do
     end
 
     it 'saves to S3 and returns a summary (200)' do
-      post '/export_file', request.to_json, {}
+      VCR.use_cassette("integration_export") do
+        post '/export_file', request.to_json, {}
+      end
 
       expect(json_response["summary"]).to eq "File files/shipment.csv was saved to S3"
       expect(last_response.status).to eq 200
@@ -29,7 +31,9 @@ describe AmazonS3Integration do
 
     context 'bucket does not exist' do
       it 'returns a message (500)' do
-        post '/export_file', request.deep_merge(parameters: { bucket_name: 'not-to-be-found' }).to_json, {}
+        VCR.use_cassette("integration_export_bucket_not_found") do
+          post '/export_file', request.deep_merge(parameters: { bucket_name: 'not-to-be-found' }).to_json, {}
+        end
 
         expect(json_response["summary"]).to eq "Bucket 'not-to-be-found' was not found."
         expect(last_response.status).to eq 500
@@ -44,16 +48,18 @@ describe AmazonS3Integration do
             access_key_id: aws_testing[:access_key_id],
             secret_access_key: aws_testing[:secret_access_key],
             bucket_name: aws_testing[:bucket_name],
-            file_name: 'files/shipment.csv'
+            file_name: 'files/shipment_batch.csv'
           },
           shipments: [sample_shipment("R9"), sample_shipment("R1")]
         }
       end
 
       it 'saves to S3 and returns a summary (200)' do
-        post '/export_file', request.to_json, {}
+        VCR.use_cassette("integration_export_batch") do
+          post '/export_file', request.to_json, {}
+        end
 
-        expect(json_response["summary"]).to eq "File files/shipment.csv was saved to S3"
+        expect(json_response["summary"]).to eq "File files/shipment_batch.csv was saved to S3"
         expect(last_response.status).to eq 200
       end
     end
@@ -67,16 +73,18 @@ describe AmazonS3Integration do
           access_key_id: aws_testing[:access_key_id],
           secret_access_key: aws_testing[:secret_access_key],
           bucket_name: 'bruno-s3-testing',
-          file_name: 'files/shipment.csv',
+          file_name: 'files/shipment_batch.csv',
           object_type: 'shipment'
         }
       }
     end
 
     it 'reads from S3 and returns object and summary (200)' do
-      post '/import_file', request.to_json, {}
+      VCR.use_cassette("integration_import") do
+        post '/import_file', request.to_json, {}
+      end
 
-      expect(json_response["summary"]).to eq "File files/shipment.csv was read from S3 with 2 object(s)."
+      expect(json_response["summary"]).to eq "File files/shipment_batch.csv was read from S3 with 2 object(s)."
       expect(json_response["shipments"][0]["id"]).to eq "R9"
 
       expect(last_response.status).to eq 200

@@ -1,0 +1,386 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:28 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:Ju7wqDLvflQUsWcyHTSPcV+B9sk=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - bAg7iwksDmzdnOgU0gYFSAi/ZJAumCra1DXsovSh9gggs04gWdua+4NSF+CA59DZ
+      X-Amz-Request-Id:
+      - EEE95C02E133F510
+      Date:
+      - Thu, 02 Oct 2014 15:39:28 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:29 GMT
+- request:
+    method: head
+    uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:29 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:aH9TwV/+QUyLfKtCdynSywV3jko=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Amz-Request-Id:
+      - F059C19915624244
+      X-Amz-Id-2:
+      - 2Wjcdjnn9s7/7WA3sDFutix6d5a5hhT4va5nHMGxLkqrfaidMT/DI4EVE4SxMUTE
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 02 Oct 2014 15:39:28 GMT
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:29 GMT
+- request:
+    method: put
+    uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        id
+        1
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      Content-Length:
+      - '4'
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:29 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:DUZyJVxGVhV+849SB7NIT/4iabY=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - AYXairm1fd88a6YEBSFnuAGfMiDpBr/dp9Rasuyf+oSGCxqsrxgSPgfl9kvi+aam
+      X-Amz-Request-Id:
+      - 337689940DE88EBD
+      Date:
+      - Thu, 02 Oct 2014 15:39:30 GMT
+      Etag:
+      - '"ce4a729ab53c3ad106c15183e665ad83"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:30 GMT
+- request:
+    method: get
+    uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:30 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:WRii3a+fv88WmUVoluzhycia1uc=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - pRvncdXYAmKu6D0GFdREM6cesiTesxoh2ncCnFblj5SUxXVbe8BVEKy4mwAnOhCW
+      X-Amz-Request-Id:
+      - 3DF5F67A7E58DD18
+      Date:
+      - Thu, 02 Oct 2014 15:39:30 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:31 GMT
+- request:
+    method: head
+    uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:31 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:0/ui3bHKw6YMwjqZfKXx8YyrIX0=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - Eqj0GDOHpoQ0YKG9qo/2c736D348LOAwF2eGwwhGEpGkSm9xof4t1UCcvS0g5CMU
+      X-Amz-Request-Id:
+      - E8696891F032FF8D
+      Date:
+      - Thu, 02 Oct 2014 15:39:31 GMT
+      Last-Modified:
+      - Thu, 02 Oct 2014 15:39:30 GMT
+      Etag:
+      - '"ce4a729ab53c3ad106c15183e665ad83"'
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - ''
+      Content-Length:
+      - '4'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:31 GMT
+- request:
+    method: get
+    uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:31 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:NgpMUUt29bh21gLKoura3sASrf4=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - TEOcyJN98+RfuPs9j+3hNCWUBtIAOW9EK+VGwt6+TH0QfUwoMSNDZnEO9z9n6CoL
+      X-Amz-Request-Id:
+      - B7490BD0F1BD06BB
+      Date:
+      - Thu, 02 Oct 2014 15:39:32 GMT
+      Last-Modified:
+      - Thu, 02 Oct 2014 15:39:30 GMT
+      Etag:
+      - '"ce4a729ab53c3ad106c15183e665ad83"'
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - ''
+      Content-Length:
+      - '4'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        id
+        1
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:32 GMT
+- request:
+    method: delete
+    uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:32 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:17bhRPE+8eYvWx+iOfG6PXmxYuA=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Amz-Id-2:
+      - TRyQVFXtGhfMPNuzGK0SKeKAJGWg16J7ozyfs7DJkIO3DYFldoq06Cvl9MTmyz0Z
+      X-Amz-Request-Id:
+      - 79ADE5FCDBD529A5
+      Date:
+      - Thu, 02 Oct 2014 15:39:32 GMT
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:33 GMT
+- request:
+    method: get
+    uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:33 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:OxWGP6bbWaH6c0MIQfPLHZfkGzQ=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - 4O471tDNSGRnGh+vEDN+A/SkMxxEeNugGczSaY6E9Jf+Iyu9YMWiOIemcau7OWBt
+      X-Amz-Request-Id:
+      - 3543C16F5D44FB52
+      Date:
+      - Thu, 02 Oct 2014 15:39:33 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:33 GMT
+- request:
+    method: head
+    uri: https://bruno-s3-testing.s3.amazonaws.com/deleteme.csv
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Thu, 02 Oct 2014 15:39:33 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:VjCKtdj+eoWyxStZ5frlHkC8oyQ=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Amz-Request-Id:
+      - 9966C3BC094E2942
+      X-Amz-Id-2:
+      - p4xac/2faJMSW3iesUPAUJ+o3s96NCDd3R1ZPxsdhZBfAT77PNMejt2zAg1Mbwnl
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 02 Oct 2014 15:39:32 GMT
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 02 Oct 2014 15:39:34 GMT
+recorded_with: VCR 2.9.2
