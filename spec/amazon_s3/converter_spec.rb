@@ -151,5 +151,15 @@ describe Converter do
         expect(subject.csv_to_hash(csv_fixture)).to eq []
       end
     end
+
+    context 'when csv uses \r as line delimiter' do
+      let(:csv_fixture) do
+        "id,status,channel,email,currency,placed_on,totals.item,totals.adjustment,totals.tax,totals.shipping,totals.payment,totals.order,line_items.0.product_id,line_items.0.name,line_items.0.quantity,line_items.0.price,line_items.0.bigcommerce_id,line_items.0.bigcommerce_product_id,adjustments.0.name,adjustments.0.value,adjustments.1.name,adjustments.1.value,billing_address.firstname,billing_address.lastname,billing_address.address1,billing_address.address2,billing_address.zipcode,billing_address.city,billing_address.state,billing_address.country,billing_address.phone,payments.0.number,payments.0.status,payments.0.amount,payments.0.payment_method,bigcommerce_id,shipping_address.firstname,shipping_address.lastname,shipping_address.address1,shipping_address.address2,shipping_address.zipcode,shipping_address.city,shipping_address.state,shipping_address.country,shipping_address.phone,shipping_address.bigcommerce_id,updated_at,token,shipping_instructions,magento_order_id,totals.discount,totals.adjustments,line_items.0.product_type,adjustments.0.tax,adjustments.1.shipping,adjustments.2.name,adjustments.2.discount,shipping_method,source,line_items.0.options.0.Size,line_items.0.options.1.Color,line_items.0.options.0.Color,\r1NCU38QJA-107,awaiting fulfillment,bigcommerce_ncu38qja_manual,sameer@spreecommerce.com,USD,2014-10-03T21:30:17+00:00,19.99,9,0,10,28.99,28.99,SPR-00001,Spree Baseball Jersey,1,19.99,8,88,Shipping,10,Discount,-1,Sameer,Gulati,3333 Awesome Street,Unit 1,20814,Bethesda,Maryland,US,4084552962,N/A,completed,28.99,Credit Card,107,Sameer,Gulati,3333 Awesome Street,Unit 1,20814,Bethesda,Maryland,US,4084552962,8,2014-10-03T21:30:39Z,a235521078b8bcad,,,,,,,,,,,,,,,"
+      end
+
+      it 'works too' do
+        expect(subject.csv_to_hash(csv_fixture).size).to eq 1
+      end
+    end
   end
 end

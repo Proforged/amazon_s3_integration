@@ -52,7 +52,7 @@ class Converter
     end
 
     def csv_to_hash(csv)
-      header, *lines = csv.split("\n")
+      header, *lines = csv.split /\n|\r/ # csv can end with \r or \n
 
       header = header.to_s.split(",")
 
