@@ -23,6 +23,7 @@ describe AmazonS3Integration do
       post '/export_file', common_request.deep_merge({
         parameters: {
           file_name: 'files/shipment.csv',
+          file_type: 'csv',
           shipment: sample_shipment("R9")
         }
       }).to_json, {}
@@ -44,7 +45,8 @@ describe AmazonS3Integration do
       let(:request) do
         {
           parameters: {
-            file_name: 'files/shipment_batch.csv'
+            file_name: 'files/shipment_batch.csv',
+            file_type: 'csv'
           },
           shipments: [sample_shipment("R9"), sample_shipment("R1")]
         }.deep_merge(common_request)
@@ -64,6 +66,7 @@ describe AmazonS3Integration do
       {
         parameters: {
           file_name: 'files/shipment_batch.csv',
+          file_type: 'csv',
           object_type: 'shipment'
         }
       }.deep_merge(common_request)

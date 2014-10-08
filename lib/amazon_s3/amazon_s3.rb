@@ -6,19 +6,19 @@ class AmazonS3
     @bucket_name = bucket_name
   end
 
-  def export(file_name:, objects:)
+  def export(file_name:, file_type:, objects:)
     verify_bucket!
 
     s3_object = find_next_s3_object(file_name)
-    s3_object.write(csv(objects))
+    s3_object.write(convert_upload(file_type, objects))
 
     "File #{s3_object.key} was saved to S3"
   end
 
-  def import(file_name:)
+  def import(file_name:, file_type:)
     verify_bucket!
 
-    objects = Converter.csv_to_hash(read_file!(file_name))
+    objects = convert_download(file_type, read_file!(file_name))
     object_count = objects.count
 
     summary = nil
@@ -49,6 +49,24 @@ class AmazonS3
     end
   end
 
+  def convert_upload(file_type, objects)
+    case file_type.to_s.downcase
+    when 'csv'
+      Converter.array_of_hashes_to_csv(objects)
+    else
+      raise "Please use a valid file type: csv or json. Received: #{file_type}."
+    end
+  end
+
+  def convert_download(file_type, content)
+    case file_type.to_s.downcase
+    when 'csv'
+      Converter.csv_to_hash(content)
+    else
+      raise "Please use a valid file type: csv or json. Received: #{file_type}."
+    end
+  end
+
   def read_file!(file_name)
     s3_object = bucket.objects[file_name]
 
@@ -63,10 +81,6 @@ class AmazonS3
 
   def verify_bucket!
     raise "Bucket '#{@bucket_name}' was not found." unless bucket.exists?
-  end
-
-  def csv(objects)
-    Converter.array_of_hashes_to_csv(objects)
   end
 
   def bucket
