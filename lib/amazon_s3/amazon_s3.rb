@@ -9,7 +9,7 @@ class AmazonS3
   def export(file_name:, file_type:, objects:)
     verify_bucket!
 
-    s3_object = find_next_s3_object(file_name)
+    s3_object = find_next_s3_object(file_name, file_type)
     s3_object.write(convert_upload(file_type, objects))
 
     "File #{s3_object.key} was saved to S3"
@@ -28,21 +28,21 @@ class AmazonS3
   end
 
   private
-  def find_next_s3_object(file_name)
+  def find_next_s3_object(file_name, extension)
     s3_object = bucket.objects[file_name]
 
     # file.csv exists?
     # save it to file(1).csv or file(next_id).csv
     if s3_object.exists?
-      prefix = file_name.gsub(".csv", "(")
+      prefix = file_name.gsub(".#{extension}", "(")
       copies = bucket.objects.with_prefix(prefix).map do |s3_object|
         # extracts the id: already_exists/shipments(2).csv -> 2
-        s3_object.key.match(/\A.*\((\d+)\)\.csv\z/)[1].to_i
+        s3_object.key.match(/\A.*\((\d+)\)\.#{extension}\z/)[1].to_i
       end
 
       next_id = copies.max.to_i + 1
 
-      file_name = file_name.gsub(".csv", "(#{next_id}).csv")
+      file_name = file_name.gsub(".#{extension}", "(#{next_id}).#{extension}")
       bucket.objects[file_name]
     else
       s3_object
@@ -53,6 +53,8 @@ class AmazonS3
     case file_type.to_s.downcase
     when 'csv'
       Converter.array_of_hashes_to_csv(objects)
+    when 'json'
+      JSON.generate(objects)
     else
       raise "Please use a valid file type: csv or json. Received: #{file_type}."
     end
@@ -62,6 +64,8 @@ class AmazonS3
     case file_type.to_s.downcase
     when 'csv'
       Converter.csv_to_hash(content)
+    when 'json'
+      JSON.parse(content)
     else
       raise "Please use a valid file type: csv or json. Received: #{file_type}."
     end

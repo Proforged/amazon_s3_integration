@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bruno-s3-testing.s3.amazonaws.com/?versioning=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Wed, 08 Oct 2014 14:44:59 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:nE/5gcy9i53OfMP8/9VOOpeivQU=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - MpGABC1RsZrmev7L8015b/S75Mg8GfhybzXO1GkoNw11M29G133eyWS6g03jrIBs
+      X-Amz-Request-Id:
+      - 6CA99578BAE348B9
+      Date:
+      - Wed, 08 Oct 2014 14:45:01 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"/>
+    http_version: 
+  recorded_at: Wed, 08 Oct 2014 14:45:00 GMT
+- request:
+    method: head
+    uri: https://bruno-s3-testing.s3.amazonaws.com/json/shipments.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Wed, 08 Oct 2014 14:45:00 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:/PnioV50d28DOP/Ym8ikaYnzjb8=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Amz-Request-Id:
+      - 7B7E8BE0D9EF1345
+      X-Amz-Id-2:
+      - PhudHkie+NPUja7gUfo1XUxQaj156TuNNz4DQZH5IW1zFLeJEpwM82ajku44/83Y
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 08 Oct 2014 14:45:00 GMT
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 08 Oct 2014 14:45:01 GMT
+- request:
+    method: put
+    uri: https://bruno-s3-testing.s3.amazonaws.com/json/shipments.json
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"R972251","status":"complete","channel":"spree","email":"spree@example.com","currency":"USD","placed_on":"2014-02-03T17:29:15.219Z","totals":{"item":200,"adjustment":20,"tax":10,"shipping":10,"payment":220,"order":220},"items":[{"product_id":"QTRZIM03","name":"QTRZIM03","quantity":2,"price":100}],"adjustments":[{"name":"Tax","value":10},{"name":"Shipping","value":5},{"name":"Shipping","value":5}],"shipping_address":{"firstname":"Joe","lastname":"Smith","address1":"1234
+        Awesome Street","address2":"","zipcode":"90210","city":"Hollywood","state":"California","country":"US","phone":"0000000000"},"billing_address":{"firstname":"Joe","lastname":"Smith","address1":"1234
+        Awesome Street","address2":"","zipcode":"90210","state":"California","country":"US","phone":"0000000000"}},{"id":"R913339","status":"complete","channel":"spree","email":"spree@example.com","currency":"USD","placed_on":"2014-02-03T17:29:15.219Z","totals":{"item":200,"adjustment":20,"tax":10,"shipping":10,"payment":220,"order":220},"items":[{"product_id":"QTRZIM03","name":"QTRZIM03","quantity":2,"price":100}],"adjustments":[{"name":"Tax","value":10},{"name":"Shipping","value":5},{"name":"Shipping","value":5}],"shipping_address":{"firstname":"Joe","lastname":"Smith","address1":"1234
+        Awesome Street","address2":"","zipcode":"90210","city":"Hollywood","state":"California","country":"US","phone":"0000000000"},"billing_address":{"firstname":"Joe","lastname":"Smith","address1":"1234
+        Awesome Street","address2":"","zipcode":"90210","state":"California","country":"US","phone":"0000000000"}}]'
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      Content-Length:
+      - '1571'
+      User-Agent:
+      - aws-sdk-ruby/1.53.0 ruby/2.1.2 x86_64-darwin13.0
+      Date:
+      - Wed, 08 Oct 2014 14:45:01 GMT
+      Authorization:
+      - AWS SHHHHHHHHHHH:TBppZIyf+fsarH3JYibcsUt2JjY=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - D+VBJmmYkgbu/L5wiM/O22MfXjdJyLrL7HoOk4b4zdzeF1YTnCoGRt+jts+oKDpp
+      X-Amz-Request-Id:
+      - B0CCA0927E1F225A
+      Date:
+      - Wed, 08 Oct 2014 14:45:06 GMT
+      Etag:
+      - '"82bd21fa94470b34faa0b63cb4e1e235"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 08 Oct 2014 14:45:05 GMT
+recorded_with: VCR 2.9.2

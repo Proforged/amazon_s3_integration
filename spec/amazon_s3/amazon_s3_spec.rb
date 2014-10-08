@@ -49,6 +49,18 @@ describe AmazonS3 do
         ).to eq "File batch/shipments.csv was saved to S3"
       end
     end
+
+    context 'when batch json' do
+      it 'saves the json with all objects', :vcr do
+        expect(
+          subject.export(
+            file_name: 'json/shipments.json',
+            file_type: 'json',
+            objects: [sample_shipment, sample_shipment]
+          )
+        ).to eq "File json/shipments.json was saved to S3"
+      end
+    end
   end
 
   describe '#import' do
@@ -89,6 +101,18 @@ describe AmazonS3 do
         summary, objects = subject.import(file_name: 'not/to/be-found.csv', file_type: 'csv')
         expect(summary).to be_nil
         expect(objects).to eq []
+      end
+    end
+
+    context 'when json' do
+      it 'reads the contents of json as hash', :vcr do
+        summary, objects = subject.import(
+          file_name: 'json/shipments.json',
+          file_type: 'json'
+        )
+
+        expect(summary).to eq "File json/shipments.json was read from S3 with 2 object(s)."
+        expect(objects[0]["id"]).to eq "R620250"
       end
     end
   end

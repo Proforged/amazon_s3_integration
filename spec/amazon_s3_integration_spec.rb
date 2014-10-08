@@ -19,17 +19,34 @@ describe AmazonS3Integration do
   end
 
   describe 'POST /export_file' do
-    it 'saves to S3 and returns a summary (200)', :vcr do
-      post '/export_file', common_request.deep_merge({
-        parameters: {
-          file_name: 'files/shipment.csv',
-          file_type: 'csv',
+    context 'when file type is csv' do
+      it 'saves to S3 and returns a summary (200)', :vcr do
+        post '/export_file', common_request.deep_merge({
+          parameters: {
+            file_name: 'files/shipment.csv',
+            file_type: 'csv',
+          },
           shipment: sample_shipment("R9")
-        }
-      }).to_json, {}
+        }).to_json, {}
 
-      expect(json_response["summary"]).to eq "File files/shipment.csv was saved to S3"
-      expect(last_response.status).to eq 200
+        expect(json_response["summary"]).to eq "File files/shipment.csv was saved to S3"
+        expect(last_response.status).to eq 200
+      end
+    end
+
+    context 'when file type is json' do
+      it 'saves to S3 and returns a summary (200)', :vcr do
+        post '/export_file', common_request.deep_merge({
+          parameters: {
+            file_name: 'json/shipment.json',
+            file_type: 'json'
+          },
+          shipment: sample_shipment("R9")
+        }).to_json, {}
+
+        expect(json_response["summary"]).to eq "File json/shipment.json was saved to S3"
+        expect(last_response.status).to eq 200
+      end
     end
 
     context 'bucket does not exist' do
@@ -79,6 +96,22 @@ describe AmazonS3Integration do
       expect(json_response["shipments"][0]["id"]).to eq "R9"
 
       expect(last_response.status).to eq 200
+    end
+
+    context 'when json' do
+      it 'reads from S3 and returns object and summary (200)', :vcr do
+        post '/import_file', request.deep_merge({
+          parameters: {
+            file_type: 'json',
+            file_name: 'json/shipment.json'
+            }
+          }).to_json, {}
+
+        expect(json_response["summary"]).to eq "File json/shipment.json was read from S3 with 1 object(s)."
+        expect(json_response["shipments"][0]["id"]).to eq "R9"
+
+        expect(last_response.status).to eq 200
+      end
     end
 
     context 'wrong aws region' do
