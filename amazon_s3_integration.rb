@@ -14,7 +14,6 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       bucket_name:  @config[:bucket_name],
     ).export(
       file_name:    @config[:file_name],
-      file_type:    @config[:file_type],
       objects:      objects
     )
 
@@ -30,8 +29,7 @@ class AmazonS3Integration < EndpointBase::Sinatra::Base
       s3_client:    s3_client,
       bucket_name:  @config[:bucket_name],
     ).import(
-      file_name:    @config[:file_name],
-      file_type:    @config[:file_type]
+      file_name:    @config[:file_name]
     )
 
     objects.each do |object|

@@ -23,8 +23,7 @@ describe AmazonS3Integration do
       it 'saves to S3 and returns a summary (200)', :vcr do
         post '/export_file', common_request.deep_merge({
           parameters: {
-            file_name: 'files/shipment.csv',
-            file_type: 'csv',
+            file_name: 'files/shipment.csv'
           },
           shipment: sample_shipment("R9")
         }).to_json, {}
@@ -38,8 +37,7 @@ describe AmazonS3Integration do
       it 'saves to S3 and returns a summary (200)', :vcr do
         post '/export_file', common_request.deep_merge({
           parameters: {
-            file_name: 'json/shipment.json',
-            file_type: 'json'
+            file_name: 'json/shipment.json'
           },
           shipment: sample_shipment("R9")
         }).to_json, {}
@@ -62,8 +60,7 @@ describe AmazonS3Integration do
       let(:request) do
         {
           parameters: {
-            file_name: 'files/shipment_batch.csv',
-            file_type: 'csv'
+            file_name: 'files/shipment_batch.csv'
           },
           shipments: [sample_shipment("R9"), sample_shipment("R1")]
         }.deep_merge(common_request)
@@ -83,7 +80,6 @@ describe AmazonS3Integration do
       {
         parameters: {
           file_name: 'files/shipment_batch.csv',
-          file_type: 'csv',
           object_type: 'shipment'
         }
       }.deep_merge(common_request)
@@ -102,7 +98,6 @@ describe AmazonS3Integration do
       it 'reads from S3 and returns object and summary (200)', :vcr do
         post '/import_file', request.deep_merge({
           parameters: {
-            file_type: 'json',
             file_name: 'json/shipment.json'
             }
           }).to_json, {}

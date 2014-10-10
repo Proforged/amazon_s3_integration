@@ -6,19 +6,19 @@ class AmazonS3
     @bucket_name = bucket_name
   end
 
-  def export(file_name:, file_type:, objects:)
+  def export(file_name:, objects:)
     verify_bucket!
 
-    s3_object = find_next_s3_object(file_name, file_type)
-    s3_object.write(convert_upload(file_type, objects))
+    s3_object = find_next_s3_object(file_name)
+    s3_object.write(convert_upload(extension(file_name), objects))
 
     "File #{s3_object.key} was saved to S3"
   end
 
-  def import(file_name:, file_type:)
+  def import(file_name:)
     verify_bucket!
 
-    objects = convert_download(file_type, read_file!(file_name))
+    objects = convert_download(extension(file_name), read_file!(file_name))
     object_count = objects.count
 
     summary = nil
@@ -28,8 +28,9 @@ class AmazonS3
   end
 
   private
-  def find_next_s3_object(file_name, extension)
+  def find_next_s3_object(file_name)
     s3_object = bucket.objects[file_name]
+    extension = extension(file_name)
 
     # file.csv exists?
     # save it to file(1).csv or file(next_id).csv
@@ -81,6 +82,10 @@ class AmazonS3
     else
       ""
     end
+  end
+
+  def extension(file_name)
+    file_name.split(".").last
   end
 
   def verify_bucket!
