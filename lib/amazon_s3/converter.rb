@@ -1,3 +1,5 @@
+require 'csv'
+
 class Converter
   class << self
     def csv_header(target, prefix = nil)
@@ -52,9 +54,8 @@ class Converter
     end
 
     def csv_to_hash(csv)
-      header, *lines = csv.split /\n|\r/ # csv can end with \r or \n
-
-      header = header.to_s.split(",")
+      csv_array = CSV.parse(csv, row_sep: :auto).to_a
+      header, lines = csv_array.shift, csv_array
 
       lines.inject([]) do |objects, current_line|
         values = current_line.split(",")
