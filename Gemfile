@@ -3,11 +3,11 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'tilt', '~> 1.4.1'
 gem 'tilt-jbuilder', require: 'sinatra/jbuilder'
-gem 'endpoint_base', github: 'flowlink/endpoint_base'
-gem 'foreman'
-gem 'unicorn'
 
-gem 'aws-sdk'
+gem 'jbuilder', '2.0.6'
+gem 'endpoint_base', github: 'flowlink/endpoint_base'
+
+gem 'aws-sdk', '~> 1'
 
 group :development do
   gem 'pry'
@@ -24,5 +24,10 @@ group :test do
   gem 'simplecov'
   gem 'rspec'
   gem 'rack-test'
+end
+
+group :production do
+  gem 'foreman'
+  gem 'unicorn'
 end
 
