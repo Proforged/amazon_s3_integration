@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -euo pipefail
+
+docker build -t amazon_s3_integration -f Dockerfile .
+docker tag -f amazon_s3_integration:latest 914794084459.dkr.ecr.us-east-1.amazonaws.com/amazon_s3_integration:latest
+docker push 914794084459.dkr.ecr.us-east-1.amazonaws.com/amazon_s3_integration:latest
