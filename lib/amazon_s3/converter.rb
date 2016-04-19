@@ -58,7 +58,7 @@ class Converter
       header, lines = csv_array.shift, csv_array
 
       lines.inject([]) do |objects, current_line|
-        values = current_line.split(",")
+        values = current_line #split(",")
 
         objects << header.each_with_index.inject({}) do |buff, (path, index)|
           json_path_set(buff, path, values[index])
