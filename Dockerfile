@@ -4,6 +4,7 @@ RUN gem install bundler
 RUN bundle config --global frozen 1
 
 RUN mkdir -p /usr/src/app
+RUN mkdir /usr/src/app/log
 WORKDIR /usr/src/app
 
 COPY ./Gemfile /usr/src/app/Gemfile
